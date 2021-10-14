@@ -22,4 +22,4 @@ jobs:
         with: 
           repository: couch-coding/heroku-actions-front
           path: ./frontend
-      - run: sudo ./build.sh
+      - run: sh build.sh
