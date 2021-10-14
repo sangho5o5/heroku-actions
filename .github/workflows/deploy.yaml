@@ -10,7 +10,14 @@ jobs:
     steps:
       - name: checkout backend
         uses: actions/checkout@v2
+      - name: checkout frontend
+        uses: actions/checkout@v2
+        with: 
+          repository: couch-coding/heroku-actions-front
+          path: ./frontend
       - run: |
+          ls -al
+          cd frontend
           ls -al
 
         
