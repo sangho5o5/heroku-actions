@@ -22,4 +22,11 @@ jobs:
         with: 
           repository: couch-coding/heroku-actions-front
           path: ./frontend
-      - run: sh build.sh
+      - name: build frontend to resources
+        run: sh build.sh
+      - name: deploy to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "git-actions-sample" #Must be unique in Heroku
+          heroku_email: "couchcoding.help@gmail.com"
