@@ -8,6 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: checkout backend
         uses: actions/checkout@v2
       - name: checkout frontend
@@ -16,8 +23,6 @@ jobs:
           repository: couch-coding/heroku-actions-front
           path: ./frontend
       - run: |
-          ls -al
-          cd frontend
-          ls -al
+        ./build.sh
 
         
