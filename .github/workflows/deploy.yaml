@@ -20,7 +20,7 @@ jobs:
       - name: checkout frontend
         uses: actions/checkout@v2
         with: 
-          repository: couch-coding/heroku-actions-front
+          repository: sangho5o5/heroku-actions-front
           path: ./frontend
       - name: build frontend to resources
         run: sh build.sh
